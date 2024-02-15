@@ -1,0 +1,19 @@
+<%= simple_form_for(movimentacao) do |form| %>
+  <%= form.error_notification %>
+
+  <%= form.input :tipo, collection: [['Entrada', 'entrada'], ['Saída', 'saida']] %>
+
+  <div class="row">
+    <div class="col-12 col-md-3">
+      <%= form.input :data, html5: true, input_html: { max: Date.current } %>
+    </div>
+    <div class="col-12 col-md-6">
+      <%= form.input :descricao %>
+    </div>
+    <div class="col-12 col-md-3">
+      <%= form.input :valor %>
+    </div>
+  </div>
+
+  <%= form.button :submit, class: "btn-primary" %>
+<% end %>

@@ -1,0 +1,15 @@
+<div id="<%= dom_id movimentacao %>"
+  class="card mb-4 <%= movimentacao.saida? ? 'text-danger' : 'text-success' %>"
+>
+  <div class="card-body d-flex gap-4">
+    <span class="">
+      <%= l movimentacao.data %>
+    </span>
+    <span class="flex-grow-1">
+      <%= movimentacao.descricao %>
+    </span>
+    <span>
+      <%= number_to_currency movimentacao.valor %>
+    </span>
+  </div>
+</div>
