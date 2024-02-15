@@ -1,0 +1,26 @@
+<h1 class="fw-bold text-center">Relatório de Movimentações</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <th>Data</th>
+    <th>Descrição</th>
+    <th>Tipo</th>
+    <th>Valor</th>
+  </thead>
+  <tbody>
+    <% @movimentacoes.each do |movimentacao| %>
+      <tr>
+        <td><%= l movimentacao.data %></td>
+        <td><%= movimentacao.descricao %></td>
+        <td><%= movimentacao.tipo %></td>
+        <td><%= number_to_currency movimentacao.valor %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="card">
+  <div class="card-body">
+    <%= @movimentacoes.saldo_atual %>
+  </div>
+</div>

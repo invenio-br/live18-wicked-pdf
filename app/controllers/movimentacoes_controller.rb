@@ -8,6 +8,17 @@ class MovimentacoesController < ApplicationController
     @saldo = collection.saldo_atual
   end
 
+  def relatorio
+    @movimentacoes = collection.order(data: :desc, created_at: :desc)
+    respond_to do |format|
+      format.html { redirect_to movimentacoes_path }
+
+      format.pdf do
+        render pdf: 'relatorio-movimentacoes', page_size: 'A4', orientation: 'Landscape'
+      end
+    end
+  end
+
   # GET /movimentacoes/new
   def new
     @movimentacao = collection.new

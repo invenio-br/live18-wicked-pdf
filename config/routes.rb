@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :usuarios
 
-  resources :movimentacoes, only: [:index, :new, :create, :destroy]
+  resources :movimentacoes, only: [:index, :new, :create, :destroy] do
+    collection do
+      get :relatorio
+    end
+  end
 
   root "movimentacoes#index"
 
