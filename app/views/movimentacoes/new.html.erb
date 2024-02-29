@@ -1,7 +1,5 @@
-<div>
-  <h1>Nova movimentação</h1>
-
-  <%= render "form", movimentacao: @movimentacao %>
-
-  <%= link_to 'Voltar para lista', movimentacoes_path, class: "mt-4 btn btn-secondary" %>
-</div>
+<%= render TurboModalComponent.new(title: 'Nova Movimentação', size: 'modal-lg') do |component| %>
+  <% component.with_body do %>
+    <%= render "form", movimentacao: @movimentacao %>
+  <% end %>
+<% end %>

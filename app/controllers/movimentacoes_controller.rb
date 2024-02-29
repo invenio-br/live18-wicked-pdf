@@ -24,16 +24,13 @@ class MovimentacoesController < ApplicationController
     @movimentacao = collection.new
   end
 
-  # POST /movimentacoes or /movimentacoes.json
   def create
     @movimentacao = collection.new(movimentacao_params)
 
-    respond_to do |format|
-      if @movimentacao.save
-        format.html { redirect_to movimentacoes_url, notice: "A movimentação foi criada com sucesso." }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-      end
+    if @movimentacao.save
+      redirect_to movimentacoes_url, notice: "A movimentação foi criada com sucesso."
+    else
+      render :create, status: :unprocessable_entity
     end
   end
 

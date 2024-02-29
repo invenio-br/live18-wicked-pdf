@@ -1,0 +1,13 @@
+<%= turbo_frame_tag frame do %>
+  <div class="modal fade" tabindex="-1" data-controller="modal">
+    <div class="modal-dialog <%= size %>">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><%= title %></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <%= body %>
+      </div>
+    </div>
+  </div>
+<% end %>

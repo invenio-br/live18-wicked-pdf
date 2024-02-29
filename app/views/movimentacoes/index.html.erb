@@ -11,7 +11,7 @@
   </div>
 
   <div class="col-12 col-md-4 p-6 d-flex flex-column gap-3">
-    <%= link_to new_movimentacao_path, class: "btn btn-primary" do %>
+    <%= link_to new_movimentacao_path, class: "btn btn-primary", data: { turbo_frame: 'modal' } do %>
       <span>Nova Movimentação</span>
     <% end %>
     <%= link_to "Gerar Relatório", relatorio_movimentacoes_path(format: :pdf), target: :blank, class: "btn btn-success" %>
@@ -28,3 +28,5 @@
 <div id="movimentacoes">
   <%= render @movimentacoes %>
 </div>
+
+<%= turbo_frame_tag "modal", target: "_top" %>

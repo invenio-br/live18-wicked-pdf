@@ -1,19 +1,24 @@
-<%= simple_form_for(movimentacao) do |form| %>
-  <%= form.error_notification %>
+<%= simple_form_for(movimentacao, html: { id: "form-movimentacao" }) do |form| %>
+  <div class="modal-body">
+    <%= form.error_notification %>
 
-  <%= form.input :tipo, collection: [['Entrada', 'entrada'], ['Saída', 'saida']] %>
+    <%= form.input :tipo, collection: [['Entrada', 'entrada'], ['Saída', 'saida']] %>
 
-  <div class="row">
-    <div class="col-12 col-md-3">
-      <%= form.input :data, html5: true, input_html: { max: Date.current } %>
-    </div>
-    <div class="col-12 col-md-6">
-      <%= form.input :descricao %>
-    </div>
-    <div class="col-12 col-md-3">
-      <%= form.input :valor %>
+    <div class="row">
+      <div class="col-12 col-md-3">
+        <%= form.input :data, html5: true, input_html: { max: Date.current } %>
+      </div>
+      <div class="col-12 col-md-6">
+        <%= form.input :descricao %>
+      </div>
+      <div class="col-12 col-md-3">
+        <%= form.input :valor %>
+      </div>
     </div>
   </div>
 
-  <%= form.button :submit, class: "btn-primary" %>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+    <%= form.button :submit, class: "btn-primary" %>
+  </div>
 <% end %>
