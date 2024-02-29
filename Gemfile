@@ -78,3 +78,5 @@ end
 gem "wkhtmltopdf-binary", "~> 0.12.6"
 
 gem "wicked_pdf", "~> 2.7"
+
+gem "view_component", "~> 3.11"

@@ -1,0 +1,8 @@
+<div id="flash-messages">
+  <% if notice %>
+    <div data-controller="flash" data-flash-text-value="<%= notice %>" data-flash-type-value="success"></div>
+  <% end %>
+  <% if alert %>
+    <div data-controller="flash" data-flash-text-value="<%= alert %>" data-flash-type-value="error"></div>
+  <% end %>
+</div>
